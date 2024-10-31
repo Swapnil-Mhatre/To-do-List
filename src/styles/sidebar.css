@@ -1,0 +1,100 @@
+.sidebar {
+    width: 18%;
+    height: 100vh;
+    padding: 25px;
+    background-color: #FCFAF8;
+}
+
+.upper-side p{
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.upper-side button {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+    padding: 10px 15px;
+    border: none;
+    color: #5E5E5E;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+button.createBtn,
+button.projectBtn {
+    background-color: #DD4C41;
+    color: white;
+    transition: .2s linear;
+    border: 2px solid #DD4C41;
+}
+
+.createBtn:hover,
+.projectBtn:hover { 
+    cursor: pointer;
+    color: #DD4C41;
+    background-color: white;
+}
+
+.completedBtn:hover,
+.AlltasksBtn:hover,
+.projectContainer:hover {
+    background-color: #E9CEB7;   
+}
+
+.active {
+    background-color: #FA9639 !important;
+    color: white;
+}
+
+.upper-side button svg {
+    width: 25px;
+}
+
+.lower-side .myProjectDiv {
+    margin-top: 25px;
+    font-size: 14px;
+    font-weight: bolder;
+}
+
+.lower-side .Projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.lower-side .Projects .projectContainer {
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.lower-side .Projects svg {
+    height: 25px;
+    width: 25px;
+}
+
+.lower-side .Projects div{
+    display: flex;
+    align-items: center;
+}
+
+.lower-side .Projects button {
+    border: none;
+    display: inline;
+    background-color: transparent;
+}
+
+.lower-side .Projects button svg:hover {
+    fill: #5E5E5E;
+    cursor: pointer;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="sidebar">
+            <div class="upper-side">
+                <p>Menu Buttons</p>
+                <button class="createBtn">
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 7.757v8.486M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                    <span>Create Task</span>
+                </button>
+                <button class="projectBtn">
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 7.757v8.486M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                    </svg>
+                    <span>Create Project</span>
+                </button>
+                <button class="completedBtn">
+                    <svg fill="currentColor" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <title>checkmark</title>
+                            <path
+                                d="M16 3c-7.18 0-13 5.82-13 13s5.82 13 13 13 13-5.82 13-13-5.82-13-13-13zM23.258 12.307l-9.486 9.485c-0.238 0.237-0.623 0.237-0.861 0l-0.191-0.191-0.001 0.001-5.219-5.256c-0.238-0.238-0.238-0.624 0-0.862l1.294-1.293c0.238-0.238 0.624-0.238 0.862 0l3.689 3.716 7.756-7.756c0.238-0.238 0.624-0.238 0.862 0l1.294 1.294c0.239 0.237 0.239 0.623 0.001 0.862z">
+                            </path>
+                        </g>
+                    </svg>
+                    <span>Completed</span>
+                </button>
+                <button class="AlltasksBtn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path
+                                d="M8 6L21 6.00078M8 12L21 12.0008M8 18L21 18.0007M3 6.5H4V5.5H3V6.5ZM3 12.5H4V11.5H3V12.5ZM3 18.5H4V17.5H3V18.5Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            </path>
+                        </g>
+                    </svg>
+                    <span>All task</span>
+                </button>
+            </div>
+            <div class="lower-side">
+                <div class="myProjectDiv">My Projects</div>
+                <div class="Projects"></div>
+            </div>
+        </div>
+        <div class="todocontainer">
+            <h2 id="Project-Heading">Default Project</h2>
+            <div class="tasksListCon"></div>
+        </div>
+        <div class="createTaskContainer formbox">
+            <form action="" id="createTaskForm">
+                <h2 class="headline" id="task-Headline">Create New Task</h2>
+                <div>
+                    <div class="taskNameCon">
+                        <input type="text" name="name_Input" id="nameInput" placeholder="Task Name" required>
+                    </div>
+                    <div class="taskDescriptionCon">
+                        <textarea name="task_Description" id="taskDescription" rows="4"
+                            placeholder="Description"></textarea>
+                    </div>
+                    <div class="inputSelectorCon">
+                        <div class="projectFolderInputCon">
+                            <label for="projectFolder">Project Folder</label>
+                            <select name="project_Folder" id="projectFolder">
+                                <option value="defaultProject">Default Project</option>
+                                <option value="myRoadmap">myRoadmap</option>
+                            </select>
+                        </div>
+                        <div class="dueDateInputCon">
+                            <label for="dueDate">Due Date</label>
+                            <input type="date" name="due_date" id="dueDate" required>
+                        </div>
+                        <div class="taskpriorityInputContainer">
+                            <label for="taskPriority">Set Priority</label>
+                            <select name="task_Priority" id="taskPriority">
+                                <option selected value disabled>Select Priority</option>
+                                <option value="high" id="high">High</option>
+                                <option value="moderate" id="moderate">Moderate</option>
+                                <option value="low" id="low">Low</option>
+                            </select>
+                        </div>
+
+                        <input type="hidden" name="task_id" id="taskID" />
+                        <input type="hidden" name="is_complete" id="isComplete" />
+                    </div>
+                    <button class="taskSubmitBtn submit btn-1">Submit</button>
+                    <button type="button" class="taskCancelBtn cancel btn-1">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <div class="createProjectCon formbox">
+            <form action="" id="newProjectForm">
+                <h2 class="headline" id="project-Headline">Create New Project</h2>
+                <div>
+                    <div class="projectNameCon">
+                        <input type="text" name="name_Input" id="nameInput" placeholder="Project Name" required>
+                    </div>
+                    <button class="projectSubmitBtn submit btn-1">Add Project</button>
+                    <button type="button" class="projectCancelBtn cancel btn-1">Cancel</button>
+                </div>
+            </form>
+        </div>
+        <div hidden>
+            <button class="emptyFolderTaskBtn">
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                    width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M12 7.757v8.486M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                </svg>
+                <span>Create Task</span>
+            </button>
+        </div>
+        <div hidden>
+            <div class="para">No Tasks have been Completed</div>
+        </div>
+    </div>
+</body>
+
+</html>

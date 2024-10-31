@@ -1,0 +1,82 @@
+.taskCard {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    padding: 10px 0;
+    margin-right: 2%;
+    border-bottom: 1px solid rgb(162, 157, 157);
+}
+
+.taskCard input {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(black);
+    margin: 0;
+    color: white;
+    width: 16px;
+    height: 16px;
+    border: 2px solid black;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    transform: scale(1.5);
+    margin-right: 10px;
+    display: grid;
+    place-content: center;
+    flex-shrink: 0;
+}
+
+.taskCard input:before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--clr-primary);
+    background-color: #FA9639;
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.taskCard input:checked:before {
+    transform: scale(1);
+}
+
+.textcontainer {
+    width: 100%;
+}
+
+.textcontainer h3 {
+    margin-bottom: 5px;
+}
+
+.textcontainer p:last-child{
+    margin-top: 5px;
+}
+
+.low {
+    color: rgb(61, 226, 61);
+}
+
+.moderate {
+    color: rgb(61, 182, 177);
+}
+
+.high {
+    color: rgb(255, 0, 0);
+}
+
+.taskCard button {
+    background-color: transparent;
+    border: none;
+    margin-right: 10px;
+}
+
+.taskCard button svg{
+    width: 30px;
+    height: 30px;
+}
+
+.taskCard button:hover {
+    cursor: pointer;
+}
